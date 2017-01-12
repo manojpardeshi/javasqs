@@ -24,6 +24,7 @@ public class SimpleQueueServiceSample {
 		while (flag) {
 			ReceiveMessageRequest receiveMessageRequest = new ReceiveMessageRequest(
 					queueUrl);
+			receiveMessageRequest.setWaitTimeSeconds(5);
 			List<Message> messages = sqs.receiveMessage(receiveMessageRequest)
 					.getMessages();
 			System.out.println("Messages size : " + messages.size());
