@@ -29,7 +29,7 @@ public class SimpleQueueServiceSample {
 			System.out.println("Messages size : " + messages.size());
 			if (messages == null || messages.size() == 0) {
 				try {
-					Thread.sleep(1000);
+					Thread.sleep(1000);// comment
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
