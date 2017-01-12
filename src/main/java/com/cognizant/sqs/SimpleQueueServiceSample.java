@@ -21,10 +21,11 @@ public class SimpleQueueServiceSample {
 		boolean flag = true;
 		ReceiveMessageRequest receiveMessageRequest = new ReceiveMessageRequest(
 				queueUrl);
-		List<Message> messages = sqs.receiveMessage(receiveMessageRequest)
-				.getMessages();
-		System.out.println("Messages size : " + messages.size());
+		
 		while (flag) {
+			List<Message> messages = sqs.receiveMessage(receiveMessageRequest)
+					.getMessages();
+			System.out.println("Messages size : " + messages.size());
 			if (messages == null || messages.size() == 0) {
 				try {
 					Thread.sleep(1000);
