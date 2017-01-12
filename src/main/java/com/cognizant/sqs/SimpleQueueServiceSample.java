@@ -15,6 +15,7 @@ public class SimpleQueueServiceSample {
 		AmazonSQS sqs = new AmazonSQSClient();
 		Region useast1 = Region.getRegion(Regions.US_EAST_1);
 		String queueUrl = "https://sqs.us-east-1.amazonaws.com/426655134338/MyQueue";
+		System.out.println("SQS endpoint is :" + queueUrl);
 		sqs.setEndpoint(queueUrl);
 		sqs.setRegion(useast1);
 		boolean flag = true;
@@ -22,6 +23,7 @@ public class SimpleQueueServiceSample {
 				queueUrl);
 		List<Message> messages = sqs.receiveMessage(receiveMessageRequest)
 				.getMessages();
+		System.out.println("Messages size : " + messages.size());
 		while (flag) {
 			if (messages == null || messages.size() == 0) {
 				try {
