@@ -19,10 +19,11 @@ public class SimpleQueueServiceSample {
 		sqs.setEndpoint(queueUrl);
 		sqs.setRegion(useast1);
 		boolean flag = true;
-		ReceiveMessageRequest receiveMessageRequest = new ReceiveMessageRequest(
-				queueUrl);
+		
 		
 		while (flag) {
+			ReceiveMessageRequest receiveMessageRequest = new ReceiveMessageRequest(
+					queueUrl);
 			List<Message> messages = sqs.receiveMessage(receiveMessageRequest)
 					.getMessages();
 			System.out.println("Messages size : " + messages.size());
