@@ -27,7 +27,7 @@ public class SimpleQueueServiceSample {
 			receiveMessageRequest.setWaitTimeSeconds(5);
 			List<Message> messages = sqs.receiveMessage(receiveMessageRequest)
 					.getMessages();
-			System.out.println("Messages size ========>: " + messages.size());
+			System.out.println("Messages size {New Changes}: " + messages.size());
 			if (messages == null || messages.size() == 0) {
 				try {
 					Thread.sleep(1000);// comment
